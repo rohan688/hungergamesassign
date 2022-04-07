@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react"
 
 export const Addrestaurants = ()=>{
@@ -12,7 +13,9 @@ export const Addrestaurants = ()=>{
 
     const handlesubmit=(e)=>{
        e.preventDefault()
-        console.log(data)
+     axios.post("http://localhost:3001/get-restaurants",data).then((res)=>{
+     alert("Data Added")
+     })
     }
     
     return (

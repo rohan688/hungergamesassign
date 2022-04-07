@@ -1,16 +1,21 @@
 {
-  "get-restaurants":[
+  "get-restaurants": [
     {
       "name": "Meraki",
       "id": 1,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 600,
       "minOrder": 50,
       "deliveryTime": 30,
       "payment_methods": {
         "card": true,
         "cash": false,
-        "upi":true
+        "upi": true
       },
       "rating": 4.3,
       "votes": 300,
@@ -20,14 +25,19 @@
     {
       "name": "Kovai Alangar vilas",
       "id": 2,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 600,
       "minOrder": 50,
       "deliveryTime": 30,
       "payment_methods": {
         "card": false,
         "cash": true,
-        "upi":true
+        "upi": true
       },
       "rating": 4,
       "votes": 300,
@@ -37,14 +47,19 @@
     {
       "name": "Oven Story",
       "id": 3,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 600,
       "minOrder": 50,
       "deliveryTime": 30,
       "payment_methods": {
         "card": true,
         "cash": true,
-        "upi":false
+        "upi": false
       },
       "rating": 3.8,
       "votes": 300,
@@ -54,14 +69,19 @@
     {
       "name": "Southern Spice",
       "id": 4,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 600,
       "minOrder": 50,
       "deliveryTime": 30,
       "payment_methods": {
         "card": false,
         "cash": true,
-        "upi":false
+        "upi": false
       },
       "rating": 2,
       "votes": 300,
@@ -71,14 +91,19 @@
     {
       "name": "ITC Grand Chola",
       "id": 5,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 5000,
       "minOrder": 2000,
       "deliveryTime": 30,
       "payment_methods": {
         "card": true,
         "cash": false,
-        "upi":true
+        "upi": true
       },
       "rating": 4.9,
       "votes": 3000,
@@ -88,14 +113,19 @@
     {
       "name": "The Raintree",
       "id": 6,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 3000,
       "minOrder": 2000,
       "deliveryTime": 30,
       "payment_methods": {
         "card": true,
         "cash": true,
-        "upi":true
+        "upi": true
       },
       "rating": 3,
       "votes": 30650,
@@ -105,14 +135,19 @@
     {
       "name": "The Belgian Waffle Co.",
       "id": 7,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 1500,
       "minOrder": 500,
       "deliveryTime": 30,
       "payment_methods": {
         "card": true,
         "cash": true,
-        "upi":false
+        "upi": false
       },
       "rating": 0.5,
       "votes": 30650,
@@ -122,7 +157,12 @@
     {
       "name": "The Red Box",
       "id": 8,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 500,
       "minOrder": 200,
       "deliveryTime": 30,
@@ -138,7 +178,12 @@
     {
       "name": "WOW Momos",
       "id": 9,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 1000,
       "minOrder": 200,
       "deliveryTime": 2,
@@ -154,7 +199,12 @@
     {
       "name": "Food @ Finger",
       "id": 10,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 700,
       "minOrder": 100,
       "deliveryTime": 30,
@@ -170,7 +220,12 @@
     {
       "name": "Kobe Sizzlers",
       "id": 11,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 1200,
       "minOrder": 500,
       "deliveryTime": 30,
@@ -186,7 +241,12 @@
     {
       "name": "Parambriym",
       "id": 12,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 800,
       "minOrder": 200,
       "deliveryTime": 30,
@@ -202,7 +262,12 @@
     {
       "name": "Wok Monk",
       "id": 13,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 3000,
       "minOrder": 2000,
       "deliveryTime": 30,
@@ -218,7 +283,12 @@
     {
       "name": "High on Grills",
       "id": 14,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 2000,
       "minOrder": 500,
       "deliveryTime": 30,
@@ -234,7 +304,12 @@
     {
       "name": "Frozen Bottle",
       "id": 15,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 350,
       "minOrder": 100,
       "deliveryTime": 30,
@@ -250,7 +325,12 @@
     {
       "name": "Kebabery",
       "id": 16,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 600,
       "minOrder": 100,
       "deliveryTime": 30,
@@ -266,7 +346,12 @@
     {
       "name": "Loretta's",
       "id": 17,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 300,
       "minOrder": 50,
       "deliveryTime": 30,
@@ -282,7 +367,9 @@
     {
       "name": "The Baker's Nook",
       "id": 18,
-      "cuisine": ["Deserts"],
+      "cuisine": [
+        "Deserts"
+      ],
       "costForTwo": 50,
       "minOrder": 50,
       "deliveryTime": 30,
@@ -298,7 +385,12 @@
     {
       "name": "Chidambaram New Moorthy Cafe",
       "id": 19,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 500,
       "minOrder": 150,
       "deliveryTime": 30,
@@ -314,7 +406,12 @@
     {
       "name": "Little Hut",
       "id": 20,
-      "cuisine": ["continental", "Asian", "Pizza", "Deserts"],
+      "cuisine": [
+        "continental",
+        "Asian",
+        "Pizza",
+        "Deserts"
+      ],
       "costForTwo": 30,
       "minOrder": 200,
       "deliveryTime": 30,
@@ -327,5 +424,6 @@
       "reviews": 445,
       "src": "https://b.zmtcdn.com/data/pictures/9/18669029/299b4a7d3aec912534398222f8a4fbe2.jpg"
     }
+   
   ]
 }
