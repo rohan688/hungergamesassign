@@ -9,7 +9,8 @@
       "deliveryTime": 30,
       "payment_methods": {
         "card": true,
-        "cash": false
+        "cash": false,
+        "upi":true
       },
       "rating": 4.3,
       "votes": 300,
@@ -25,7 +26,8 @@
       "deliveryTime": 30,
       "payment_methods": {
         "card": false,
-        "cash": true
+        "cash": true,
+        "upi":true
       },
       "rating": 4,
       "votes": 300,
@@ -41,7 +43,8 @@
       "deliveryTime": 30,
       "payment_methods": {
         "card": true,
-        "cash": true
+        "cash": true,
+        "upi":false
       },
       "rating": 3.8,
       "votes": 300,
@@ -57,7 +60,8 @@
       "deliveryTime": 30,
       "payment_methods": {
         "card": false,
-        "cash": true
+        "cash": true,
+        "upi":false
       },
       "rating": 2,
       "votes": 300,
@@ -73,7 +77,8 @@
       "deliveryTime": 30,
       "payment_methods": {
         "card": true,
-        "cash": false
+        "cash": false,
+        "upi":true
       },
       "rating": 4.9,
       "votes": 3000,
@@ -89,7 +94,8 @@
       "deliveryTime": 30,
       "payment_methods": {
         "card": true,
-        "cash": true
+        "cash": true,
+        "upi":true
       },
       "rating": 3,
       "votes": 30650,
@@ -105,7 +111,8 @@
       "deliveryTime": 30,
       "payment_methods": {
         "card": true,
-        "cash": true
+        "cash": true,
+        "upi":false
       },
       "rating": 0.5,
       "votes": 30650,

@@ -7,7 +7,7 @@ export const RestaurantDetails=()=>{
    getdata()
   },[])
   const getdata =()=>{
-  axios.get("http://localhost:3001/get-restaurants").then((res)=>{
+  axios.get("http://localhost:3001/get-restaurants?_page=1&_limit=5").then((res)=>{
    setdata(res.data)
    console.log(res.data)
   })
@@ -37,10 +37,10 @@ export const RestaurantDetails=()=>{
             <h1 className="nameh1">Restaurants List</h1>
             <h3>Pagination</h3>
             <div className="pagination">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
+            <button onClick={()=>{axios.get("http://localhost:3001/get-restaurants?_page=1&_limit=5").then((res)=>{setdata(res.data)})}}>1</button>
+            <button onClick={()=>{axios.get("http://localhost:3001/get-restaurants?_page=2&_limit=5").then((res)=>{setdata(res.data)})}}>2</button>
+            <button onClick={()=>{axios.get("http://localhost:3001/get-restaurants?_page=3&_limit=5").then((res)=>{setdata(res.data)})}}>3</button>
+            <button onClick={()=>{axios.get("http://localhost:3001/get-restaurants?_page=4&_limit=5").then((res)=>{setdata(res.data)})}}>4</button>
             </div>
             <h3>Sort by Price</h3>
             <div className="sortbuttons">
@@ -50,7 +50,7 @@ export const RestaurantDetails=()=>{
             </div>
             <h3>Ratings</h3>
             <div className="Ratingbuttons">
-            <button onClick={()=>{axios.get('http://localhost:3001/get-restaurants').then((res)=>{setdata(res.data.filter((e)=>{if (e.rating>=4) {return true} else{return false}}))})}}>4 and above</button>
+            <button onClick={()=>{data.then((res)=>{setdata(res.data.filter((e)=>{if (e.rating>=4) {return true} else{return false}}))})}}>4 and above</button>
             <button onClick={()=>{axios.get('http://localhost:3001/get-restaurants').then((res)=>{setdata(res.data.filter((e)=>{if (e.rating>=3) {return true} else{return false}}))})}}>3 and above</button>
             <button onClick={()=>{axios.get('http://localhost:3001/get-restaurants').then((res)=>{setdata(res.data.filter((e)=>{if (e.rating>=2) {return true} else{return false}}))})}}>2 and above</button>
             <button onClick={()=>{axios.get('http://localhost:3001/get-restaurants').then((res)=>{setdata(res.data.filter((e)=>{if (e.rating>=1) {return true} else{return false}}))})}}>1 and above</button>
@@ -72,7 +72,7 @@ export const RestaurantDetails=()=>{
                    
                     <div className="child2">
                         <h3>{el.name}</h3>
-                        {el.cuisine.map((el)=><div className="cuisine" >
+                        {el.cuisine.map((el)=><div key={el} className="cuisine" >
                         <div>
                         <span>{el}</span>
                         </div>

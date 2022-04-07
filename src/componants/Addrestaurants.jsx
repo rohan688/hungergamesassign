@@ -1,32 +1,66 @@
-import axios from "axios"
-import { useEffect } from "react"
+import { useState } from "react"
 
-export const Addrestaurants=()=>{
-  useEffect(()=>{
-  axios.get(" http://localhost:3001/get-restaurants").then((res)=>{
-   console.log(res.data)
-  })
-  },[])
+export const Addrestaurants = ()=>{
+    const[data,setdata]=useState({})
+    const handlechange=(e)=>{
+    const{id,value}=e.target;
+    setdata({
+        ...data,
+        [id]:value
+    })
+    }
 
-
-
-
-
+    const handlesubmit=(e)=>{
+       e.preventDefault()
+        console.log(data)
+    }
     
-
-    return(
+    return (
         <div>
-            <h1>Add Hotels</h1>
-        <form>
-            <lable>NAME</lable>
-            <input className="name" type="text" placeholder="Restaurents Name"/><br></br>
-            <label>COST FOR TWO</label>
-            <input className="costForTwo" type="number" placeholder="costfortwo"/><br></br>
-             <lable>MINIMUM ORDER</lable>
-            <input className="minOrder" type="number" placeholder="Minimum order"/><br></br>
-            <label>DELIVERY TIME</label>
-            <input className="deliveryTime" type="number" placeholder="Delivery Time"/><br></br>
-          </form>
+            <form onSubmit={handlesubmit} action="">
+                <label htmlFor="">Restaurant Name</label>
+                <input onChange={handlechange} type="text" name="" id="name" />
+
+                <div style={{marginBottom:'20px'}}>
+                    <label htmlFor="">Cuisine</label>
+                    Continental<input  type="checkbox" name="" id="cuisine" value="continental"  />
+                    Asian<input type="checkbox" name="" id="cuisine" value="Asian" />
+                    Pizza<input type="checkbox" name="" id="cuisine" value="Pizza" />
+                    Deserts<input type="checkbox" name="" id="cuisine" value="Deserts" />
+                </div>
+                
+                <label htmlFor="">cost for two</label>
+                <input onChange={handlechange} type="text" name="" id="costForTwo" />
+
+                <label htmlFor="">Min Order</label>
+                <input onChange={handlechange} type="text" name="" id="minOrder" />
+
+                <label htmlFor="">Delivery Time</label>
+                <input onChange={handlechange} type="text" name="" id="deliveryTime" />
+
+               <div style={{marginBottom:'20px'}}>
+                    <label htmlFor="">Payment Mehods</label>
+                    Card<input type="checkbox" name="" id="payment_methods" value='card'  />
+                    Cash<input type="checkbox" name="" id="payment_methods" value='cash' />
+                    All<input type="checkbox" name="" id="payment_methods" value='all' />
+               </div>
+
+                <label htmlFor="">Rating</label>
+                <input onChange={handlechange} type="text" name="" id="rating" />
+
+                <label htmlFor="">votes</label>
+                <input onChange={handlechange} type="text" name="" id="votes" />
+
+                <label htmlFor="">reviews</label>
+                <input onChange={handlechange} type="text" name="" id="reviews" />
+
+                <label htmlFor="">Image</label>
+                <input onChange={handlechange} type="text"  id="src"  />
+
+                <button>Submit</button>
+            </form>
+            
+
         </div>
     )
 }
