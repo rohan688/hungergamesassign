@@ -3,11 +3,13 @@ import { useEffect, useState } from "react"
 
 export const RestaurantDetails=()=>{
   const [data,setdata]=useState([]);
+  const [page,setpage]=useState(1);
+  const [loading,setloading]=useState(true)
   useEffect(()=>{
-   getdata()
-  },[])
+   getdata(page)
+  },[page])
   const getdata =()=>{
-  axios.get("http://localhost:3001/get-restaurants?_page=1&_limit=6").then((res)=>{
+  axios.get(`http://localhost:3001/get-restaurants?_page=${page}&_limit=5`).then((res)=>{
    setdata(res.data)
    console.log(res.data)
   })
@@ -37,10 +39,10 @@ export const RestaurantDetails=()=>{
             <h1 className="nameh1">Restaurants List</h1>
             <h3>Pagination</h3>
             <div className="pagination">
-            <button onClick={()=>{axios.get("http://localhost:3001/get-restaurants?_page=1&_limit=6").then((res)=>{setdata(res.data)})}}>1</button>
-            <button onClick={()=>{axios.get("http://localhost:3001/get-restaurants?_page=2&_limit=6").then((res)=>{setdata(res.data)})}}>2</button>
-            <button onClick={()=>{axios.get("http://localhost:3001/get-restaurants?_page=3&_limit=6").then((res)=>{setdata(res.data)})}}>3</button>
-            <button onClick={()=>{axios.get("http://localhost:3001/get-restaurants?_page=4&_limit=6").then((res)=>{setdata(res.data)})}}>4</button>
+            <button disabled={page==1} onClick={()=>{setpage((page)=>page - 1)}}>PREV</button>
+            <button  onClick={()=>{setpage((page)=>page + 1)}}>NEXT</button>
+         
+           
             </div>
             <h3>Sort by Price</h3>
             <div className="sortbuttons">
@@ -60,6 +62,7 @@ export const RestaurantDetails=()=>{
             <div className="Payment">
             <button onClick={()=>{axios.get('http://localhost:3001/get-restaurants').then((res)=>{setdata(res.data.filter((e)=>{if (e.payment_methods.cash===true) {return true} else{return false}}))})}}>Cash</button>
             <button onClick={()=>{axios.get('http://localhost:3001/get-restaurants').then((res)=>{setdata(res.data.filter((e)=>{if (e.payment_methods.card===true) {return true} else{return false}}))})}}>Card</button>
+            <button onClick={()=>{axios.get('http://localhost:3001/get-restaurants').then((res)=>{setdata(res.data.filter((e)=>{if (e.payment_methods.upi===true) {return true} else{return false}}))})}}>Upi</button>
             <button onClick={()=>{getdata()}}>all</button>
             </div>
          <div>
@@ -83,6 +86,7 @@ export const RestaurantDetails=()=>{
                         <div><h2 className="cost">accepts: 
                         {el.payment_methods.card?' card':''}
                          {el.payment_methods.cash?' cash':''}
+                         {el.payment_methods.upi?' upi':''}
                          {el.payment_methods.all?' all':''}
                          </h2>
                          <div className="rat">{el.rating}</div>
