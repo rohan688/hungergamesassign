@@ -1,66 +1,102 @@
-import axios from "axios";
-import { useState } from "react"
+import { useState } from 'react'
+// import './addRestaurant.css'
+import axios from 'axios'
 
 export const Addrestaurants = ()=>{
-    const[data,setdata]=useState({})
-    const handlechange=(e)=>{
-    const{id,value}=e.target;
-    setdata({
-        ...data,
-        [id]:value
-    })
+    const [form, setForm] = useState({
+        name: "",
+        cuisine: [],
+        costForTwo: "",
+        minOrder: "",
+        deliveryTime: "",
+        payment_methods: {
+            card: "false",
+            cash: "false"
+        },
+        rating: "",
+        votes: "",
+        reviews: "",
+        src: ""
+    });
+    const handleForm = (e)=>{
+        const {id, value} = e.target;
+        if(id==="cuisine"){
+            const val = value.split(', ')
+            setForm({...form, [id]:val})
+        }
+       else if(id==="card"||
+                id==="cash" || id==="upi"){
+            if(value==="on"){
+                setForm({...form, payment_methods:{
+                    [id]:true
+                }})
+            }
+            else{
+                setForm({...form, payment_methods:{
+                    [id]:false
+                }})
+            }
+        }
+        else{
+            setForm({...form, [id]:value})
+        }
     }
-
-    const handlesubmit=(e)=>{
-       e.preventDefault()
-     axios.post("http://localhost:3001/get-restaurants",data).then((res)=>{
-     alert("Data Added")
-     })
+    console.log(form)
+    const submitForm = ()=>{
+        axios.post('http://localhost:3001/get-restaurants',{
+            name: form.name,
+            cuisine: form.cuisine,
+            costForTwo: form.costForTwo,
+            minOrder: form.minOrder,
+            deliveryTime: form.deliveryTime,
+            payment_methods: form.payment_methods,
+            rating: form.rating,
+            votes: form.votes,
+            reviews: form.reviews,
+            src: form.src
+        }).then((res)=>{alert('successfully submitted')})
     }
-    
     return (
         <div>
-            <form onSubmit={handlesubmit} action="">
+            <form action="">
                 <label htmlFor="">Restaurant Name</label>
-                <input onChange={handlechange} type="text" name="" id="name" />
+                <input onChange={(e)=>handleForm(e)} type="text" name="" id="name" />
 
-                <div style={{marginBottom:'20px'}}>
-                    <label htmlFor="">Cuisine</label>
-                    Continental<input  type="checkbox" name="" id="cuisine" value="continental"  />
-                    Asian<input type="checkbox" name="" id="cuisine" value="Asian" />
-                    Pizza<input type="checkbox" name="" id="cuisine" value="Pizza" />
-                    Deserts<input type="checkbox" name="" id="cuisine" value="Deserts" />
-                </div>
+                <label htmlFor="">Cuisine</label>
+                <input type="text" name="" id="cuisine" onChange={(e)=>handleForm(e)} placeholder="type multiple cuisine seperated by ', ' 1 comma and space "/>
                 
                 <label htmlFor="">cost for two</label>
-                <input onChange={handlechange} type="text" name="" id="costForTwo" />
+                <input type="Number" name="" id="costForTwo" onChange={(e)=>handleForm(e)} />
 
                 <label htmlFor="">Min Order</label>
-                <input onChange={handlechange} type="text" name="" id="minOrder" />
+                <input type="Number" name="" id="minOrder" onChange={(e)=>handleForm(e)} />
 
                 <label htmlFor="">Delivery Time</label>
-                <input onChange={handlechange} type="text" name="" id="deliveryTime" />
+                <input type="Number" name="" id="deliveryTime" onChange={(e)=>handleForm(e)} />
 
+                <label htmlFor="">Payment Mehods</label>
                <div style={{marginBottom:'20px'}}>
-                    <label htmlFor="">Payment Mehods</label>
-                    Card<input type="checkbox" name="" id="payment_methods" value='card'  />
-                    Cash<input type="checkbox" name="" id="payment_methods" value='cash' />
-                    All<input type="checkbox" name="" id="payment_methods" value='all' />
+                    <label htmlFor="">Card</label>
+                    <input type="checkbox" name="" id="card" onChange={(e)=>handleForm(e)} />
+                    <label htmlFor=""> Cash</label>
+                    <input type="checkbox" name="" id="cash" onChange={(e)=>handleForm(e)} />
+                    <label htmlFor=""> Upi</label>
+                    <input type="checkbox" name="" id="upi" onChange={(e)=>handleForm(e)} />
                </div>
 
                 <label htmlFor="">Rating</label>
-                <input onChange={handlechange} type="text" name="" id="rating" />
+                <input type="text" name="" id="rating" onChange={(e)=>handleForm(e)} />
 
                 <label htmlFor="">votes</label>
-                <input onChange={handlechange} type="text" name="" id="votes" />
+                <input type="text" name="" id="votes" onChange={(e)=>handleForm(e)} />
 
                 <label htmlFor="">reviews</label>
-                <input onChange={handlechange} type="text" name="" id="reviews" />
+                <input type="text" name="" id="reviews" onChange={(e)=>handleForm(e)} />
 
                 <label htmlFor="">Image</label>
-                <input onChange={handlechange} type="text"  id="src"  />
+                <input type="text" id="src" onChange={(e)=>handleForm(e)} />
 
-                <button>Submit</button>
+                <button onClick={()=>{submitForm()}}>Submit</button>
             </form>
             
 
